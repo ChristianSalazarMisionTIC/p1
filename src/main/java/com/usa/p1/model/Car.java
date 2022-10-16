@@ -17,16 +17,16 @@ public class Car {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idCar;
+    private String name;
     private String brand;
     private Integer year;
     private String description;
-    private String gama;
 
 
     @ManyToOne
-    @JoinColumn(name = "idCategory")
+    @JoinColumn(name = "idGama")
     @JsonIgnoreProperties("libs")
-    private Category category;
+    private Gama gama;
 
     @OneToMany(cascade = {CascadeType.PERSIST},mappedBy = "car")
     @JsonIgnoreProperties({"car", "client"})

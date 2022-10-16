@@ -9,18 +9,18 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-@Table(name = "category")
+@Table(name = "gama")
 @NoArgsConstructor
 @Getter
 @Setter
-public class Category {
+public class Gama {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer id;
+    private Integer idGama;
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
-    @JsonIgnoreProperties("category")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "gama")
+    @JsonIgnoreProperties("gama")
     private List<Car> cars;
 }
